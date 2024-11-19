@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'signup.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<SignUpPage> {
   bool _rememberMe = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(70),
+        preferredSize: const Size.fromHeight(59),
         child: AppBar(),
       ),
       body: Padding(
@@ -32,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
             const Padding(
               padding: EdgeInsets.only(top: 33),
               child: Text(
-                'Log in to your account',
+                'Create Your account',
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontSize: 24,
@@ -44,7 +43,19 @@ class _LoginPageState extends State<LoginPage> {
             const Padding(
               padding: EdgeInsets.only(top: 21),
               child: Text(
-                'Welcome Back! Please enter your details.',
+                'Start your journey through energy with',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  color: Color.fromRGBO(83, 88, 98, 100),
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 5),
+              child: Text(
+                'Airene!',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
@@ -54,8 +65,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
-              margin:
-                  const EdgeInsets.only(top: 20, left: 5, bottom: 10, right: 5),
+              margin: const EdgeInsets.only(top: 5, left: 5, bottom: 5, right: 5),
               child: TextField(
                 decoration: InputDecoration(
                   filled: true,
@@ -64,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: 'Enter your email',
                   hintStyle: TextStyle(color: Colors.grey),
                   labelStyle: TextStyle(
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: Colors.grey,
                   ),
                   border: OutlineInputBorder(
@@ -85,8 +95,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
-              margin:
-                  const EdgeInsets.only(top: 20, left: 5, bottom: 10, right: 5),
+              margin: const EdgeInsets.only(top: 5, left: 5, bottom: 10, right: 5),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -96,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: 'Enter your password',
                   hintStyle: TextStyle(color: Colors.grey),
                   labelStyle: TextStyle(
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: Colors.grey,
                   ),
                   border: OutlineInputBorder(
@@ -196,40 +205,6 @@ class _LoginPageState extends State<LoginPage> {
                   const EdgeInsets.symmetric(vertical: 22),
                 ),
                 elevation: MaterialStateProperty.all(5),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10), // Adjust the value as needed
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Don't have an Account?",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                      color: Color.fromRGBO(83, 88, 98, 100),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigate to SignUpPage when clicked
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SignUpPage()),
-                      );
-                    },
-                    child: const Text(
-                      ' Sign up',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.orange,
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
           ],
